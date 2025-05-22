@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Github, Linkedin, Mail, ExternalLink, Download } from 'lucide-react';
@@ -126,13 +127,13 @@ const HeroSection = () => {
             </div>
           </div>
           
-          {/* Right profile image column with floating card design */}
-          <div className="lg:w-1/2 flex justify-center items-center mt-8 lg:mt-0">
+          {/* Right profile image column with floating card design - MODIFIED */}
+          <div className="lg:w-1/2 flex justify-center items-center lg:items-start lg:mt-24 mt-8">
             <div className="relative">
-              {/* Main circular profile image with gradient border */}
+              {/* Main circular profile image with gradient border - MODIFIED */}
               <div className="relative w-64 h-64 md:w-80 md:h-80 animate-fade-in">
-                <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-brand-blue via-brand-purple to-accent [animation:spin_8s_linear_infinite] blur-sm opacity-70 scale-105"></div>
-                <div className="absolute inset-0 bg-gradient-to-tr from-brand-blue via-brand-purple to-accent rounded-full p-1 [mask:linear-gradient(white,transparent_70%)]">
+                <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-brand-blue via-brand-purple to-accent [animation:spin_8s_linear_infinite] opacity-70 scale-105"></div>
+                <div className="absolute inset-0 bg-gradient-to-tr from-brand-blue via-brand-purple to-accent rounded-full p-1">
                   <div className="w-full h-full bg-background flex items-center justify-center overflow-hidden rounded-full">
                     <Avatar className="w-full h-full">
                       <AvatarImage src="https://i.postimg.cc/fWdvh7xK/resume-pic-1.jpg" alt="Pulagam Tripura Sai" className="object-cover" />
@@ -140,9 +141,6 @@ const HeroSection = () => {
                     </Avatar>
                   </div>
                 </div>
-                
-                {/* Glow effect */}
-                <div className="absolute -inset-4 rounded-full bg-brand-blue/20 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
               </div>
               
               {/* Floating "Available for hire" card */}
@@ -171,7 +169,7 @@ const HeroSection = () => {
                 </div>
               </Card>
               
-              {/* Glowing orbs for decoration */}
+              {/* Subtle background elements */}
               <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-brand-blue/5 rounded-full blur-3xl z-0"></div>
               <div className="absolute -top-6 -right-6 w-32 h-32 bg-brand-purple/5 rounded-full blur-3xl z-0"></div>
             </div>
