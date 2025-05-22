@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Github, Linkedin, Mail, ExternalLink, Download } from 'lucide-react';
@@ -136,7 +135,7 @@ const HeroSection = () => {
                 <div className="absolute inset-0 bg-gradient-to-tr from-brand-blue via-brand-purple to-accent rounded-full p-1 [mask:linear-gradient(white,transparent_70%)]">
                   <div className="w-full h-full bg-background flex items-center justify-center overflow-hidden rounded-full">
                     <Avatar className="w-full h-full">
-                      <AvatarImage src="https://i.postimg.cc/4yHV4G7y/pic.jpg" alt="Pulagam Tripura Sai" className="object-cover" />
+                      <AvatarImage src="https://i.postimg.cc/fWdvh7xK/resume-pic-1.jpg" alt="Pulagam Tripura Sai" className="object-cover" />
                       <AvatarFallback className="text-3xl">PTS</AvatarFallback>
                     </Avatar>
                   </div>
