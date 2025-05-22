@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
@@ -12,7 +11,7 @@ const AboutSection = () => {
   ];
 
   const education = {
-    degree: "B.Tech in Technology",
+    degree: "B. Tech in Computer Science and Engineering",
     institution: "Vel Tech Rangarajan Dr.Sagunthala R&D Institute",
     period: "2020–2024"
   };
