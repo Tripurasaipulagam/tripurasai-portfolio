@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight, Github, Linkedin, Mail, ExternalLink, Download } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Skeleton } from '@/components/ui/skeleton';
+import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 
 const HeroSection = () => {
   return (
@@ -134,10 +135,10 @@ const HeroSection = () => {
                 <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-brand-blue via-brand-purple to-accent [animation:spin_8s_linear_infinite] blur-sm opacity-70 scale-105"></div>
                 <div className="absolute inset-0 bg-gradient-to-tr from-brand-blue via-brand-purple to-accent rounded-full p-1 [mask:linear-gradient(white,transparent_70%)]">
                   <div className="w-full h-full bg-background flex items-center justify-center overflow-hidden rounded-full">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                      <circle cx="12" cy="7" r="4"></circle>
-                    </svg>
+                    <Avatar className="w-full h-full">
+                      <AvatarImage src="https://i.postimg.cc/4yHV4G7y/pic.jpg" alt="Pulagam Tripura Sai" className="object-cover" />
+                      <AvatarFallback className="text-3xl">PTS</AvatarFallback>
+                    </Avatar>
                   </div>
                 </div>
                 
