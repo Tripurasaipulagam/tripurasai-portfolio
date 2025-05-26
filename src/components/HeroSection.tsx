@@ -7,9 +7,19 @@ import { Skeleton } from '@/components/ui/skeleton';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 
 const HeroSection = () => {
+  const handleResumeDownload = () => {
+    // Create a temporary link element to trigger download
+    const link = document.createElement('a');
+    link.href = '/resume.pdf'; // Path to your resume file in the public folder
+    link.download = 'Pulagam_Tripura_Sai_Resume.pdf'; // Downloaded file name
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <section id="hero" className="min-h-screen flex items-center relative overflow-hidden">
-      {/* Abstract background with gradient overlay */}
+      {/* Background elements */}
       <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-background/50 z-0">
         <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:30px_30px]" />
         <div className="absolute h-[40rem] w-[40rem] rounded-full blur-[10rem] bg-brand-blue/10 -top-[15rem] -left-[20rem]" />
@@ -72,11 +82,14 @@ const HeroSection = () => {
                     <ExternalLink className="w-4 h-4 transition-transform group-hover:translate-y-[-2px] group-hover:translate-x-[2px]" />
                   </a>
                 </Button>
-                <Button asChild variant="outline" size="lg" className="rounded-full gap-2 group">
-                  <a href="#" download>
-                    Resume
-                    <Download className="w-4 h-4 transition-transform group-hover:translate-y-[2px]" />
-                  </a>
+                <Button 
+                  variant="outline" 
+                  size="lg" 
+                  className="rounded-full gap-2 group"
+                  onClick={handleResumeDownload}
+                >
+                  Resume
+                  <Download className="w-4 h-4 transition-transform group-hover:translate-y-[2px]" />
                 </Button>
               </div>
               
