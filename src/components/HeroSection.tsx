@@ -8,10 +8,12 @@ import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 
 const HeroSection = () => {
   const handleResumeDownload = () => {
-    // Create a temporary link element to trigger download
+    // Use the Google Drive direct download link
+    const googleDriveLink = 'https://drive.google.com/uc?export=download&id=1-VmHYi1kwU9y9Yyoo3KlWz4a-0CQCRji';
     const link = document.createElement('a');
-    link.href = '/resume.pdf'; // Path to your resume file in the public folder
-    link.download = 'Pulagam_Tripura_Sai_Resume.pdf'; // Downloaded file name
+    link.href = googleDriveLink;
+    link.download = 'Pulagam_Tripura_Sai_Resume.pdf';
+    link.target = '_blank';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
