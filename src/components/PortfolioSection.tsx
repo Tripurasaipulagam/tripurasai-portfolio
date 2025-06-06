@@ -3,7 +3,7 @@ import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, ArrowRight, Code, Database, Brain } from "lucide-react";
+import { ExternalLink, ArrowRight, Code, Database, Brain, Github } from "lucide-react";
 
 const PortfolioSection = () => {
   const [activeFilter, setActiveFilter] = useState('all');
@@ -38,12 +38,14 @@ const PortfolioSection = () => {
     },
     {
       id: 3,
-      title: "Hospital Management System",
+      title: "My Virtual Class Room",
       category: ["dotnet", "web"],
-      image: "bg-[url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1453&q=80')]",
+      image: "bg-[url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80')]",
       icon: <Database className="h-12 w-12 text-accent/70" />,
-      description: "Complete hospital management solution built with ASP.NET Core, featuring patient records, appointment scheduling, and billing.",
-      technologies: ["C#", "ASP.NET Core", "SQL Server", "Entity Framework"]
+      description: "My Virtual Class Room Project built with ASP.NET, Featuring the students and Staff records, give FeedBack and admin having all sections access to control.",
+      technologies: ["C#", "ASP.NET", "SQL Server", "Entity Framework"],
+      pdfUrl: "https://drive.google.com/file/d/1Kl8KvNnXkZ0-UK-pk2r36wb1ET3JQZ1y/view?usp=sharing",
+      githubUrl: "https://github.com/Tripurasaipulagam/My-Virtual-Classroom.git"
     }
   ];
   
@@ -54,6 +56,12 @@ const PortfolioSection = () => {
   const handleViewDetails = (project: typeof projects[0]) => {
     if (project.pdfUrl) {
       window.open(project.pdfUrl, '_blank');
+    }
+  };
+
+  const handleViewCode = (project: typeof projects[0]) => {
+    if (project.githubUrl) {
+      window.open(project.githubUrl, '_blank');
     }
   };
 
@@ -117,16 +125,29 @@ const PortfolioSection = () => {
                   ))}
                 </div>
                 
-                <Button 
-                  variant="outline" 
-                  size="sm" 
-                  className="w-full group"
-                  onClick={() => handleViewDetails(project)}
-                  disabled={!project.pdfUrl}
-                >
-                  <span className="mr-2">View Details</span>
-                  <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                </Button>
+                <div className="flex gap-2">
+                  <Button 
+                    variant="outline" 
+                    size="sm" 
+                    className="flex-1 group"
+                    onClick={() => handleViewDetails(project)}
+                    disabled={!project.pdfUrl}
+                  >
+                    <span className="mr-2">View Details</span>
+                    <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                  
+                  {project.githubUrl && (
+                    <Button 
+                      variant="outline" 
+                      size="sm" 
+                      className="px-3"
+                      onClick={() => handleViewCode(project)}
+                    >
+                      <Github className="h-4 w-4" />
+                    </Button>
+                  )}
+                </div>
               </CardContent>
             </Card>
           ))}
