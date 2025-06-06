@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
@@ -7,7 +8,12 @@ const AboutSection = () => {
   const certifications = [
     "AWS Cloud Architecting",
     "Cisco Programming Essentials in C",
-    "NPTEL courses in Cloud Computing and Security"
+    "Introduction to Cybersecurity in Cisco",
+    "NPTEL in Introduction to Industry 4.0 and Industrial Internet of Things",
+    "C# (Basic) in Hacker Rank",
+    "Fundamentals of Network Security",
+    "Cyber Security",
+    "Cloud Security via AICTE"
   ];
 
   const education = {
