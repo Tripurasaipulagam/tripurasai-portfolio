@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { Card, CardContent } from "@/components/ui/card";
@@ -24,7 +23,8 @@ const PortfolioSection = () => {
       image: "bg-[url('https://images.unsplash.com/photo-1556742049-0a8e1b76d389?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80')]",
       icon: <Brain className="h-12 w-12 text-accent/70" />,
       description: "A machine learning system using Python and XGBoost to detect fraudulent credit card transactions with high accuracy.",
-      technologies: ["Python", "XGBoost", "Scikit-learn", "Pandas"]
+      technologies: ["Python", "XGBoost", "Scikit-learn", "Pandas"],
+      pdfUrl: "https://drive.google.com/file/d/1km4phRrIqhzBYGQBSR3TCaOoKjRrJa2W/view?usp=sharing"
     },
     {
       id: 2,
@@ -33,7 +33,8 @@ const PortfolioSection = () => {
       image: "bg-[url('https://images.unsplash.com/photo-1576671414121-aa0c81c869e3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80')]",
       icon: <Brain className="h-12 w-12 text-accent/70" />,
       description: "Early detection system for pulmonary diseases using Deep Learning, Capsule Networks and CNN.",
-      technologies: ["Python", "TensorFlow", "Keras", "Deep Learning"]
+      technologies: ["Python", "TensorFlow", "Keras", "Deep Learning"],
+      pdfUrl: "https://drive.google.com/file/d/1MiwWaV2mvkqOftGI13RDo3Lwxl-8Zfov/view?usp=sharing"
     },
     {
       id: 3,
@@ -49,6 +50,12 @@ const PortfolioSection = () => {
   const filteredProjects = activeFilter === 'all' 
     ? projects 
     : projects.filter(project => project.category.includes(activeFilter));
+
+  const handleViewDetails = (project: typeof projects[0]) => {
+    if (project.pdfUrl) {
+      window.open(project.pdfUrl, '_blank');
+    }
+  };
 
   return (
     <section id="portfolio" className="py-20 bg-secondary/80 relative">
@@ -110,7 +117,13 @@ const PortfolioSection = () => {
                   ))}
                 </div>
                 
-                <Button variant="outline" size="sm" className="w-full group">
+                <Button 
+                  variant="outline" 
+                  size="sm" 
+                  className="w-full group"
+                  onClick={() => handleViewDetails(project)}
+                  disabled={!project.pdfUrl}
+                >
                   <span className="mr-2">View Details</span>
                   <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </Button>
