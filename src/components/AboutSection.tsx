@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
@@ -11,9 +10,7 @@ const AboutSection = () => {
     "Introduction to Cybersecurity in Cisco",
     "NPTEL in Introduction to Industry 4.0 and Industrial Internet of Things",
     "C# (Basic) in Hacker Rank",
-    "Fundamentals of Network Security",
-    "Cyber Security",
-    "Cloud Security via AICTE"
+    "Fundamentals of Network Security, Cyber Security, Cloud Security via AICTE"
   ];
 
   const education = {
