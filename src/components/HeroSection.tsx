@@ -7,16 +7,8 @@ import { Skeleton } from '@/components/ui/skeleton';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 
 const HeroSection = () => {
-  const handleResumeDownload = () => {
-    // Use the Google Drive direct download link
-    const googleDriveLink = 'https://drive.google.com/uc?export=download&id=1-VmHYi1kwU9y9Yyoo3KlWz4a-0CQCRji';
-    const link = document.createElement('a');
-    link.href = googleDriveLink;
-    link.download = 'Pulagam_Tripura_Sai_Resume.pdf';
-    link.target = '_blank';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+  const handleResumeView = () => {
+    window.open('https://tripurasai-resume.tiiny.site', '_blank');
   };
 
   return (
@@ -88,10 +80,10 @@ const HeroSection = () => {
                   variant="outline" 
                   size="lg" 
                   className="rounded-full gap-2 group"
-                  onClick={handleResumeDownload}
+                  onClick={handleResumeView}
                 >
                   Resume
-                  <Download className="w-4 h-4 transition-transform group-hover:translate-y-[2px]" />
+                  <ExternalLink className="w-4 h-4 transition-transform group-hover:translate-y-[-2px] group-hover:translate-x-[2px]" />
                 </Button>
               </div>
               
